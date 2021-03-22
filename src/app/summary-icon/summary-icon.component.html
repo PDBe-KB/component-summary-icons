@@ -1,0 +1,73 @@
+<div *ngFor="let icon of data">
+  <div *ngIf="icon.counts || icon.counts == 0" class="small-6 medium-4 large-2 columns summary-icon-div" style="height: 280px">
+    <div *ngIf="icon.counts > 0">
+      <div class="label-tooltip">
+        <a (click)="scrollToId(icon.section_div_id)"
+           onclick="gtag('event', 'click', {'event_category': 'summary', 'event_label': 'navIcon', 'value': 'clicked'})">
+          <p style="height: 190px">
+            <i class="icon {{icon.icon_class}} summary-icon" [attr.data-icon]="icon.icon_data_icon"></i>
+            <br>
+            <span style="font-weight: bold">{{icon.counts}}</span>
+            <br>
+            {{icon.label}}
+          </p>
+        </a>
+        <span *ngIf="icon.description" class="label-tooltip-text">{{icon.description}}</span>
+
+      </div>
+      <div [ngSwitch]="icon.label">
+
+        <app-download *ngSwitchCase="'Structures'"
+                      [downloadModalData]="downloadModalData['protvistaProtein']" [type]="'summary'"></app-download>
+
+        <span *ngIf="hasSuperposition">
+          <app-superpose *ngSwitchCase="'Structures'" [superposeModalData]="getSuperposeData()"
+                         label="View structure clusters" tooltip="View all the structural clusters of this protein"></app-superpose>
+        </span>
+
+        <app-download *ngSwitchCase="'Ligands'"
+                      [downloadModalData]="downloadModalData['ligandsProtein']" [type]="'summary'"></app-download>
+
+        <span *ngIf="hasSuperposition">
+          <app-superpose *ngSwitchCase="'Ligands'" [superposeModalData]="getSuperposeData(true)"
+                         label="View all ligands" tooltip="View all the ligands superposed on this protein"></app-superpose>
+        </span>
+
+        <app-download *ngSwitchCase="'Interactions'" [downloadModalData]="downloadModalData['interactionsProtein']" [type]="'summary'"></app-download>
+
+        <app-download *ngSwitchCase="'Similar proteins'"
+                      [downloadModalData]="downloadModalData['similarProtein']" [type]="'summary'"></app-download>
+      </div>
+    </div>
+
+    <div *ngIf="icon.counts == -1" class="summary-icon-zero">
+      <div class="lds-spinner">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
+      <p>
+        {{icon.label}}
+      </p>
+    </div>
+
+    <div *ngIf="icon.counts == 0" class="summary-icon-zero">
+      <p style="text-align: center">
+        <i class="icon {{icon.icon_class}} summary-icon" [attr.data-icon]="icon.icon_data_icon"></i>
+        <br>
+        <span style="font-weight: bold">{{icon.counts}}</span>
+        <br>
+        {{icon.label}}
+      </p>
+    </div>
+  </div>
+</div>

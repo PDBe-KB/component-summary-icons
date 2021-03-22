@@ -1,11 +1,18 @@
 import { TestBed, async } from '@angular/core/testing';
 import { AppComponent } from './app.component';
+import {SummaryIcons} from './summary-icon/summary-icon.models';
+import {SummaryIconComponent} from './summary-icon/summary-icon.component';
+import {SuperposeComponent} from './superpose/superpose.component';
+import {DownloadComponent} from './download/download.component';
 
 describe('AppComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [
-        AppComponent
+        AppComponent,
+        SummaryIconComponent,
+        SuperposeComponent,
+        DownloadComponent
       ],
     }).compileComponents();
   }));
@@ -14,18 +21,5 @@ describe('AppComponent', () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.debugElement.componentInstance;
     expect(app).toBeTruthy();
-  });
-
-  it(`should have as title 'pdbe-kb-summary-icons'`, () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    const app = fixture.debugElement.componentInstance;
-    expect(app.title).toEqual('pdbe-kb-summary-icons');
-  });
-
-  it('should render title in a h1 tag', () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    fixture.detectChanges();
-    const compiled = fixture.debugElement.nativeElement;
-    expect(compiled.querySelector('h1').textContent).toContain('Welcome to pdbe-kb-summary-icons!');
   });
 });
