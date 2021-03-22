@@ -1,6 +1,10 @@
 PDBe-KB Summary Icons Component
 =
 
+[![Build Status](https://www.travis-ci.com/PDBe-KB/component-summary-icons.svg?branch=master)](https://www.travis-ci.com/PDBe-KB/component-summary-icons)
+[![codecov](https://codecov.io/gh/PDBe-KB/component-summary-icons/branch/main/graph/badge.svg?token=ZE5F4YID7I)](https://codecov.io/gh/PDBe-KB/component-summary-icons)
+[![Maintainability](https://api.codeclimate.com/v1/badges/97aa515784475bfac9e1/maintainability)](https://codeclimate.com/github/PDBe-KB/component-summary-icons/maintainability)
+
 This is the repository of a lightweight Angular 7 web component that displays icons and item counts for data such as the number of available PDB entries or the number of associated publications.
 
 This web component is used on PDBe-KB Aggregated Views of Proteins to display such summary information.
