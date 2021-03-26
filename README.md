@@ -1,7 +1,7 @@
 PDBe-KB Summary Icons Component
 =
 
-[![Build Status](https://www.travis-ci.com/PDBe-KB/component-summary-icons.svg?branch=master)](https://www.travis-ci.com/PDBe-KB/component-summary-icons)
+[![Build Status](https://www.travis-ci.com/PDBe-KB/component-summary-icons.svg?branch=main)](https://www.travis-ci.com/PDBe-KB/component-summary-icons)
 [![codecov](https://codecov.io/gh/PDBe-KB/component-summary-icons/branch/main/graph/badge.svg?token=ZE5F4YID7I)](https://codecov.io/gh/PDBe-KB/component-summary-icons)
 [![Maintainability](https://api.codeclimate.com/v1/badges/97aa515784475bfac9e1/maintainability)](https://codeclimate.com/github/PDBe-KB/component-summary-icons/maintainability)
 
